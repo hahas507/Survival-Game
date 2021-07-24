@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
         CharacterRotation();
     }
 
+    //앉기 시도
     private void TryCrouch()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //앉기
     private void Crouch()
     {
         isCrouch = !isCrouch;
@@ -88,7 +90,27 @@ public class PlayerController : MonoBehaviour
             applyCrouchPosY = originPosY;
         }
 
-        theCamera.transform.localPosition = new Vector3(theCamera.transform.localPosition.x, applyCrouchPosY, theCamera.transform.localPosition.z);
+        StartCoroutine(CrouchCoroutine());
+    }
+
+    //부드러운 앉기 동작
+    private IEnumerator CrouchCoroutine()
+    {
+        float posY = theCamera.transform.localPosition.y;
+
+        int count = 0;
+
+        while (posY != applyCrouchPosY)
+        {
+            posY = Mathf.Lerp(posY, applyCrouchPosY, 0.3f);
+            theCamera.transform.localPosition = new Vector3(0, posY, 0);
+
+            if (count > 15)
+                break;
+
+            yield return null;
+        }
+        theCamera.transform.localPosition = new Vector3(0, crouchPosY, 0);
     }
 
     private void IsGround()
@@ -106,6 +128,11 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        //앉은상태에서 점프시 앉은상태 해제
+        if (isCrouch)
+        {
+            Crouch();
+        }
         myRigid.velocity = transform.up * jumpForce;
     }
 
@@ -129,6 +156,10 @@ public class PlayerController : MonoBehaviour
 
     private void Running()
     {
+        if (isCrouch)
+        {
+            Crouch();
+        }
         isRun = true;
         applySpeed = runSpeed;
     }
