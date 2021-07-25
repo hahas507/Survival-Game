@@ -44,11 +44,14 @@ public class PlayerController : MonoBehaviour
     private Camera theCamera;
 
     private Rigidbody myRigid;
+    private GunController theGunController;
 
     private void Start()
     {
         capsuleCollider = GetComponent<CapsuleCollider>();
         myRigid = GetComponent<Rigidbody>();
+        theGunController = FindObjectOfType<GunController>();
+
         applySpeed = walkSpeed;
         originPosY = theCamera.transform.localPosition.y;
         applyCrouchPosY = originPosY;
@@ -160,6 +163,9 @@ public class PlayerController : MonoBehaviour
         {
             Crouch();
         }
+
+        theGunController.CancelFineSight();
+
         isRun = true;
         applySpeed = runSpeed;
     }

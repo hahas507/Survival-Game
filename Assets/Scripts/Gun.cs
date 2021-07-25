@@ -18,7 +18,7 @@ public class Gun : MonoBehaviour
     public int maxBulletCount;
     public int carryBulletCount;
 
-    public float retroAction; // 반동세기
+    public float retroActionForce; // 반동세기
     public float retroActionFineSightForce; //정조준 반동세기
 
     public Vector3 fineSightOriginPos;
