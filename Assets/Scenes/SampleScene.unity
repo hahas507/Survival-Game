@@ -580,7 +580,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &1328285713
 GameObject:
@@ -593,7 +593,6 @@ GameObject:
   - component: {fileID: 1328285714}
   - component: {fileID: 1328285715}
   - component: {fileID: 1328285716}
-  - component: {fileID: 1328285717}
   m_Layer: 0
   m_Name: Holder
   m_TagString: Untagged
@@ -624,12 +623,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328285713}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d446ad6b65ce554cab6a6a42908f1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHand: {fileID: 8768013043651801420}
+  currentHand: {fileID: 0}
 --- !u!114 &1328285716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,104 +642,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGun: {fileID: 994766293}
-  originPos: {x: 0, y: 0, z: 0}
-  theCam: {fileID: 963194227}
---- !u!82 &1328285717
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328285713}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1524436294
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +654,7 @@ GameObject:
   - component: {fileID: 1524436296}
   - component: {fileID: 1524436295}
   m_Layer: 0
-  m_Name: MuzzleFlash
+  m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -836,9 +737,9 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5545,13 +5446,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524436294}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -3.085, y: 0.3858, z: 0.538}
-  m_LocalScale: {x: 0.09999999, y: 0.10000001, z: 0.10000002}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.449, y: 1.62, z: 3.874}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1836536344}
-  m_Father: {fileID: 543450652747467322}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1836536343
 GameObject:
@@ -5565,7 +5466,7 @@ GameObject:
   - component: {fileID: 1836536346}
   - component: {fileID: 1836536345}
   m_Layer: 0
-  m_Name: MuzzleFlash inner
+  m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5662,9 +5563,9 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -10635,56 +10536,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
-      propertyPath: fireSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 7a1824f260fe45549b854eb3d908d14a, type: 3}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
-      propertyPath: muzzleFlash
-      value: 
-      objectReference: {fileID: 1524436296}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
-      propertyPath: carryBulletCount
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
-      propertyPath: retroActionForce
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
-      propertyPath: reloadBulletCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
-      propertyPath: currentBulletCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
-      propertyPath: fineSightOriginPos.x
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
-      propertyPath: fineSightOriginPos.y
-      value: 0.335
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
-      propertyPath: fineSightOriginPos.z
-      value: -0.5854
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
-      propertyPath: retroActionFineSightForce
-      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3100069989411342245, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
