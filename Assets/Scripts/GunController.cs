@@ -28,10 +28,13 @@ public class GunController : MonoBehaviour
     [SerializeField]
     private GameObject HitEffectPrefab;
 
+    private CrossHair theCrossHair;
+
     private void Start()
     {
         originPos = Vector3.zero;
         audioSource = GetComponent<AudioSource>();
+        theCrossHair = FindObjectOfType<CrossHair>();
     }
 
     // Update is called once per frame
@@ -63,6 +66,7 @@ public class GunController : MonoBehaviour
     {
         isFineSightMode = !isFineSightMode;
         currentGun.anim.SetBool("FineSightMode", isFineSightMode);
+        theCrossHair.FineSightAnimation(isFineSightMode);
 
         if (isFineSightMode)
         {
@@ -160,6 +164,7 @@ public class GunController : MonoBehaviour
 
     private void Shoot()
     {
+        theCrossHair.FireAnimation();
         currentGun.currentBulletCount--;
         currentFireRate = currentGun.fireRate;//fire rate calculation
         PlaySE(currentGun.fireSound);
@@ -171,7 +176,11 @@ public class GunController : MonoBehaviour
 
     private void Hit()
     {
-        if (Physics.Raycast(theCam.transform.position, theCam.transform.forward, out hitInfo, currentGun.range))
+        if (Physics.Raycast(theCam.transform.position, theCam.transform.forward +
+            new Vector3(UnityEngine.Random.Range(-theCrossHair.GetAccuracy() - currentGun.accuracy, theCrossHair.GetAccuracy() + currentGun.accuracy),
+                        UnityEngine.Random.Range(-theCrossHair.GetAccuracy() - currentGun.accuracy, theCrossHair.GetAccuracy() + currentGun.accuracy),
+                        0)
+            , out hitInfo, currentGun.range))
         {
             GameObject clone = Instantiate(HitEffectPrefab, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
             Destroy(clone, 2f);
@@ -238,5 +247,10 @@ public class GunController : MonoBehaviour
     public Gun GetGun()
     {
         return currentGun;
+    }
+
+    public bool GetFineSightMod()
+    {
+        return isFineSightMode;
     }
 }

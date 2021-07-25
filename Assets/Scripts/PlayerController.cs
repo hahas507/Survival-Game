@@ -41,12 +41,15 @@ public class PlayerController : MonoBehaviour
 
     private float currentCameraRotationX = 0f;
 
+    private Vector3 lastPos;
+
     [SerializeField]
     private Camera theCamera;
 
     private Rigidbody myRigid;
     private GunController theGunController;
     private Hand theHand;
+    private CrossHair theCrossHair;
 
     private void Start()
     {
@@ -54,6 +57,7 @@ public class PlayerController : MonoBehaviour
         myRigid = GetComponent<Rigidbody>();
         theGunController = FindObjectOfType<GunController>();
         theHand = FindObjectOfType<Hand>();
+        theCrossHair = FindObjectOfType<CrossHair>();
 
         applySpeed = walkSpeed;
         originPosY = theCamera.transform.localPosition.y;
@@ -67,6 +71,7 @@ public class PlayerController : MonoBehaviour
         TryRun();
         TryCrouch();
         Move();
+        MoveCheck();
         CameraRotation();
         CharacterRotation();
     }
@@ -84,6 +89,7 @@ public class PlayerController : MonoBehaviour
     private void Crouch()
     {
         isCrouch = !isCrouch;
+        theCrossHair.CrouchAnimation(isCrouch);
 
         if (isCrouch)
         {
@@ -122,6 +128,7 @@ public class PlayerController : MonoBehaviour
     private void IsGround()
     {
         isGround = Physics.Raycast(transform.position, Vector3.down, capsuleCollider.bounds.extents.y + 0.1f);
+        theCrossHair.RunningAnimation(!isGround);
     }
 
     private void TryJump()
@@ -148,18 +155,21 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Running");
             Running();
+            //Debug.Log("Key Down");
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             Debug.Log("stopped running");
             RunningCancel();
+            //Debug.Log("keyUP");
         }
     }
 
     private void RunningCancel()
     {
         isRun = false;
-        theHand.anim.SetBool("Run", isRun);
+        theCrossHair.RunningAnimation(isRun);
+        //theHand.anim.SetBool("Run", isRun);
         applySpeed = walkSpeed;
     }
 
@@ -173,7 +183,8 @@ public class PlayerController : MonoBehaviour
         theGunController.CancelFineSight();
 
         isRun = true;
-        theHand.anim.SetBool("Run", isRun);
+        //theHand.anim.SetBool("Run", isRun);
+        theCrossHair.RunningAnimation(isRun);
         applySpeed = runSpeed;
     }
 
@@ -195,7 +206,24 @@ public class PlayerController : MonoBehaviour
             isWalk = false;
         }
 
-        theHand.anim.SetBool("Walk", isWalk);
+        theCrossHair.WalkingAnimation(isWalk);
+    }
+
+    private void MoveCheck()
+    {
+        //if (!isRun && !isCrouch)
+        //{
+        //    if (Vector3.Distance(lastPos, transform.position) >= 0.01f)
+        //    {
+        //        isWalk = true;
+        //        //Debug.Log(Vector3.Distance(lastPos, transform.position));
+        //    }
+        //    else
+        //    { isWalk = false; }
+
+        //    theCrossHair.WalkingAnimation(isWalk);
+        //    lastPos = transform.position;
+        //}
     }
 
     private void CameraRotation()
