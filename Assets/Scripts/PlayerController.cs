@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float jumpForce;
 
     private bool isRun = false;
+    private bool isWalk = false;
     private bool isGround = true;
     private bool isCrouch = false;
 
@@ -45,12 +46,14 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody myRigid;
     private GunController theGunController;
+    private Hand theHand;
 
     private void Start()
     {
         capsuleCollider = GetComponent<CapsuleCollider>();
         myRigid = GetComponent<Rigidbody>();
         theGunController = FindObjectOfType<GunController>();
+        theHand = FindObjectOfType<Hand>();
 
         applySpeed = walkSpeed;
         originPosY = theCamera.transform.localPosition.y;
@@ -143,10 +146,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            Debug.Log("Running");
             Running();
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
+            Debug.Log("stopped running");
             RunningCancel();
         }
     }
@@ -154,6 +159,7 @@ public class PlayerController : MonoBehaviour
     private void RunningCancel()
     {
         isRun = false;
+        theHand.anim.SetBool("Run", isRun);
         applySpeed = walkSpeed;
     }
 
@@ -167,11 +173,13 @@ public class PlayerController : MonoBehaviour
         theGunController.CancelFineSight();
 
         isRun = true;
+        theHand.anim.SetBool("Run", isRun);
         applySpeed = runSpeed;
     }
 
     private void Move()
     {
+        isWalk = true;
         float moveDirX = Input.GetAxis("Horizontal");
         float moveDirZ = Input.GetAxis("Vertical");
 
@@ -181,6 +189,13 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = (moveHorizontal + moveVertical).normalized * applySpeed;
 
         myRigid.MovePosition(transform.position + velocity * Time.deltaTime);
+
+        if (moveDirX == 0 && moveDirZ == 0)
+        {
+            isWalk = false;
+        }
+
+        theHand.anim.SetBool("Walk", isWalk);
     }
 
     private void CameraRotation()
