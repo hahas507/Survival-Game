@@ -19,8 +19,18 @@ public class GunController : MonoBehaviour
 
     private AudioSource audioSource;
 
+    //레이저 충돌정보
+    private RaycastHit hitInfo;
+
+    [SerializeField]
+    private Camera theCam;
+
+    [SerializeField]
+    private GameObject HitEffectPrefab;
+
     private void Start()
     {
+        originPos = Vector3.zero;
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -154,11 +164,18 @@ public class GunController : MonoBehaviour
         currentFireRate = currentGun.fireRate;//fire rate calculation
         PlaySE(currentGun.fireSound);
         currentGun.muzzleFlash.Play();
-
+        Hit();
         StopAllCoroutines();
         StartCoroutine(retroActionCoroutine());
+    }
 
-        Debug.Log("Gun fired");
+    private void Hit()
+    {
+        if (Physics.Raycast(theCam.transform.position, theCam.transform.forward, out hitInfo, currentGun.range))
+        {
+            GameObject clone = Instantiate(HitEffectPrefab, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+            Destroy(clone, 2f);
+        }
     }
 
     private void GunFireRateCalc()
