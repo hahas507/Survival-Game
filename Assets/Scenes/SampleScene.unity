@@ -11218,6 +11218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
+      propertyPath: fireRate
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
       propertyPath: fireSound
       value: 
       objectReference: {fileID: 8300000, guid: 7a1824f260fe45549b854eb3d908d14a, type: 3}
@@ -11229,7 +11234,7 @@ PrefabInstance:
     - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
       propertyPath: carryBulletCount
-      value: 23
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
@@ -11239,12 +11244,12 @@ PrefabInstance:
     - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
       propertyPath: reloadBulletCount
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
       propertyPath: currentBulletCount
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
