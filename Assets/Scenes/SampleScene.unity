@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254731014}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hand Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701885719}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Gun Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 1223303052}
   - component: {fileID: 1223303057}
   - component: {fileID: 1223303056}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 1328285715}
   - component: {fileID: 1328285716}
   - component: {fileID: 1328285717}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,6 +645,8 @@ MonoBehaviour:
   currentGun: {fileID: 994766293}
   originPos: {x: 0, y: 0, z: 0}
   theCam: {fileID: 963194227}
+  HitEffectPrefab: {fileID: 3495356983157993481, guid: 3c390279eab1f2b46a0326180aa81e3f,
+    type: 3}
 --- !u!82 &1328285717
 AudioSource:
   m_ObjectHideFlags: 0
@@ -752,7 +754,7 @@ GameObject:
   - component: {fileID: 1524436297}
   - component: {fileID: 1524436296}
   - component: {fileID: 1524436295}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5564,7 +5566,7 @@ GameObject:
   - component: {fileID: 1836536344}
   - component: {fileID: 1836536346}
   - component: {fileID: 1836536345}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MuzzleFlash inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10374,7 +10376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2139458650}
   - component: {fileID: 2139458652}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -10453,7 +10455,7 @@ PrefabInstance:
     - target: {fileID: 1278909085361275242, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2409613668122345924, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
@@ -10463,22 +10465,22 @@ PrefabInstance:
     - target: {fileID: 6397941459530348279, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7448553304922302554, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7453550446881780581, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7962372652082798413, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8615533463780858814, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
@@ -10538,12 +10540,12 @@ PrefabInstance:
     - target: {fileID: 8767273700558430917, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8905407536347827761, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8996879948641091844, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
@@ -10553,12 +10555,12 @@ PrefabInstance:
     - target: {fileID: 8996879948641091844, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9188923693434100089, guid: 246d7762fa093f849b2ab1be6261eb7c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 246d7762fa093f849b2ab1be6261eb7c, type: 3}
@@ -10581,6 +10583,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 701885719}
     m_Modifications:
+    - target: {fileID: 1017827122939383711, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1086759776545468502, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426275773133391090, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2327931749445016863, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
       propertyPath: m_RootOrder
@@ -10686,10 +10703,70 @@ PrefabInstance:
       propertyPath: retroActionFineSightForce
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 2908026785976246232, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3100069989411342245, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
       propertyPath: m_Name
       value: SubMachineGun1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100069989411342245, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190979998235838608, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347691181756179556, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491375137922187113, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494912445017009915, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507929426941162948, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134014340544993772, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071447457693075403, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602727150728929152, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850735259926674148, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600654730136744748, guid: dc6a7cd33bf9b584f92c888528c3f386,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8551866489185748837, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
