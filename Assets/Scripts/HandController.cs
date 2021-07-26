@@ -9,7 +9,7 @@ public class HandController : MonoBehaviour
 
     //현재 장착된 Hand형 타입 무기
     [SerializeField]
-    private Hand currentHand;
+    private MeleeWeapon currentHand;
 
     private bool isAttack = false;
     private bool isSwing = false;
@@ -76,14 +76,14 @@ public class HandController : MonoBehaviour
         return false;
     }
 
-    public void HandChange(Hand _hand)
+    public void HandChange(MeleeWeapon _melee)
     {
         if (WeaponManager.currentWeapon != null)
         {
             WeaponManager.currentWeapon.gameObject.SetActive(false);
         }
 
-        currentHand = _hand;
+        currentHand = _melee;
         WeaponManager.currentWeapon = currentHand.GetComponent<Transform>();
         WeaponManager.currentWeaponAnimation = currentHand.anim;
 
