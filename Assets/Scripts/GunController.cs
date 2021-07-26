@@ -13,7 +13,9 @@ public class GunController : MonoBehaviour
     private float currentFireRate;
 
     private bool isReload = false;
-    private bool isFineSightMode = false;
+
+    [HideInInspector]
+    public bool isFineSightMode = false;
 
     //original position value
     [SerializeField]
