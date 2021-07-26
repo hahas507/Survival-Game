@@ -19,12 +19,12 @@ public class WeaponManager : MonoBehaviour
     private Gun[] guns;
 
     [SerializeField]
-    private MeleeWeapon[] melee;
+    private Hand[] hands;
 
     //관리 차원에서 쉽게 무기 접근이 가능하도록 만듦
     private Dictionary<string, Gun> gunDictionary = new Dictionary<string, Gun>();
 
-    private Dictionary<string, MeleeWeapon> meleeDictionary = new Dictionary<string, MeleeWeapon>();
+    private Dictionary<string, Hand> handDictionary = new Dictionary<string, Hand>();
 
     //현재 무기 타입
     [SerializeField]
@@ -42,15 +42,10 @@ public class WeaponManager : MonoBehaviour
         {
             gunDictionary.Add(guns[i].gunName, guns[i]);
         }
-        for (int i = 0; i < melee.Length; i++)
+        for (int i = 0; i < hands.Length; i++)
         {
-            meleeDictionary.Add(melee[i].MeleeWeaponName, melee[i]);
+            handDictionary.Add(hands[i].handName, hands[i]);
         }
-
-        var test = gunDictionary.Values;
-        var test2 = meleeDictionary.Values;
-        Debug.Log(test);
-        Debug.Log(test2);
     }
 
     private void Update()
@@ -59,7 +54,7 @@ public class WeaponManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                StartCoroutine(ChangeWeaponCoroutine("MELEE", "HAND"));
+                StartCoroutine(ChangeWeaponCoroutine("HAND", "맨손"));
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -90,9 +85,9 @@ public class WeaponManager : MonoBehaviour
         {
             theGunController.GunChange(gunDictionary[_name]);
         }
-        else if (_type == "MELEE")
+        else if (_type == "HAND")
         {
-            theHandController.HandChange(meleeDictionary[_name]);
+            theHandController.HandChange(handDictionary[_name]);
         }
     }
 
@@ -106,7 +101,7 @@ public class WeaponManager : MonoBehaviour
                 GunController.isActivate = false;
                 break;
 
-            case "MELEE":
+            case "HAND":
                 HandController.isActivate = false;
                 break;
         }

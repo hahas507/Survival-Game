@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeWeapon : MonoBehaviour
+public class Hand : MonoBehaviour
 {
-    //Weapon Type
-    public bool isHand;
-
-    public bool isAxe;
-    public bool isPickAxe;
-
-    public string MeleeWeaponName; // 너클이나 맨손 구분
+    public string handName; // 너클이나 맨손 구분
     public float range; // 공격범위
     public int damage; // 공격력
     public float workSpeed; // 작업 속도

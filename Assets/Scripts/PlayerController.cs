@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody myRigid;
     private GunController theGunController;
-    private MeleeWeapon theHand;
+    private Hand theHand;
     private CrossHair theCrossHair;
 
     private void Start()
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider>();
         myRigid = GetComponent<Rigidbody>();
         theGunController = FindObjectOfType<GunController>();
-        theHand = FindObjectOfType<MeleeWeapon>();
+        theHand = FindObjectOfType<Hand>();
         theCrossHair = FindObjectOfType<CrossHair>();
 
         applySpeed = walkSpeed;

@@ -1015,9 +1015,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1328285714}
-  - component: {fileID: 1328285717}
   - component: {fileID: 1328285715}
   - component: {fileID: 1328285716}
+  - component: {fileID: 1328285717}
   - component: {fileID: 1328285718}
   - component: {fileID: 1328285719}
   m_Layer: 2
@@ -1186,7 +1186,8 @@ MonoBehaviour:
   ChangeWeaponEndDelayTime: 0.1
   guns:
   - {fileID: 994766293}
-  melee: []
+  hands:
+  - {fileID: 8768013043651801420}
   currentWeaponType: GUN
   theGunController: {fileID: 1328285716}
   theHandController: {fileID: 1328285715}
@@ -11709,11 +11710,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
         type: 3}
-      propertyPath: gunName
-      value: SubMachineGun1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865627378023627504, guid: dc6a7cd33bf9b584f92c888528c3f386,
-        type: 3}
       propertyPath: accuracy
       value: 0.04
       objectReference: {fileID: 0}
@@ -11868,14 +11864,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a56a302eaaae2e4985191a36f4a5abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHand: 0
-  isAxe: 0
-  isPickAxe: 0
-  MeleeWeaponName: "\uB9E8\uC190"
-  range: 3
+  handName: "\uB9E8\uC190"
+  range: 2
   damage: 1
   workSpeed: 0
-  attackDelay: 0.1
-  attackDelayA: 0.2
-  attackDelayB: 0.3
+  attackDelay: 1
+  attackDelayA: 0.5
+  attackDelayB: 0.1
   anim: {fileID: 2595693037314568587}
