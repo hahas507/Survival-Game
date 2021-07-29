@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     private GunController theGunController;
     private MeleeWeapon theHand;
     private CrossHair theCrossHair;
+    private StatusController theStatusController;
 
     private void Start()
     {
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
         applySpeed = walkSpeed;
         originPosY = theCamera.transform.localPosition.y;
         applyCrouchPosY = originPosY;
+        theStatusController = FindObjectOfType<StatusController>();
     }
 
     private void Update()
@@ -133,7 +135,7 @@ public class PlayerController : MonoBehaviour
 
     private void TryJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)
+        if (Input.GetKeyDown(KeyCode.Space) && isGround && theStatusController.GetCurrentSP() > 0)
         {
             Jump();
         }
@@ -146,18 +148,19 @@ public class PlayerController : MonoBehaviour
         {
             Crouch();
         }
+        theStatusController.DecreaseStamina(100);
         myRigid.velocity = transform.up * jumpForce;
     }
 
     private void TryRun()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && theStatusController.GetCurrentSP() > 0)
         {
             Debug.Log("Running");
             Running();
             //Debug.Log("Key Down");
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || theStatusController.GetCurrentSP() <= 0)
         {
             Debug.Log("stopped running");
             RunningCancel();
@@ -185,6 +188,7 @@ public class PlayerController : MonoBehaviour
         isRun = true;
         //theHand.anim.SetBool("Run", isRun);
         theCrossHair.RunningAnimation(isRun);
+        theStatusController.DecreaseStamina(10);
         applySpeed = runSpeed;
     }
 
