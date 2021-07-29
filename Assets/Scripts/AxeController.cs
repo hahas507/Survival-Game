@@ -7,11 +7,11 @@ public class AxeController : MeleeWeaponController
 {
     public static bool isActivate = false;
 
-    private void Start()
-    {
-        WeaponManager.currentWeapon = currentMeleeWeapon.GetComponent<Transform>();
-        WeaponManager.currentWeaponAnimation = currentMeleeWeapon.anim;
-    }
+    //private void Start()
+    //{
+    //    WeaponManager.currentWeapon = currentMeleeWeapon.GetComponent<Transform>();
+    //    WeaponManager.currentWeaponAnimation = currentMeleeWeapon.anim;
+    //}
 
     protected void Update()
     {
