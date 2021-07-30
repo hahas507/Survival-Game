@@ -55,9 +55,12 @@ public class GunController : MonoBehaviour
 
     private void TryFineSight()
     {
-        if (Input.GetButtonDown("Fire2") && !isReload)
+        if (!Inventory.inventoryActivated)
         {
-            FineSight();
+            if (Input.GetButtonDown("Fire2") && !isReload)
+            {
+                FineSight();
+            }
         }
     }
 
@@ -125,9 +128,12 @@ public class GunController : MonoBehaviour
 
     private void TryFire()
     {
-        if (Input.GetButton("Fire1") && currentFireRate <= 0 && !isReload)
+        if (!Inventory.inventoryActivated)
         {
-            Fire();
+            if (Input.GetButton("Fire1") && currentFireRate <= 0 && !isReload)
+            {
+                Fire();
+            }
         }
     }
 

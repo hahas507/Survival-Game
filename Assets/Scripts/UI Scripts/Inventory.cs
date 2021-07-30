@@ -13,11 +13,14 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private GameObject go_SlotParent;
 
+    private GunController theGunController;
+
     private Slot[] slots;
 
     private void Start()
     {
         slots = go_SlotParent.GetComponentsInChildren<Slot>();
+        theGunController = FindObjectOfType<GunController>();
     }
 
     private void Update()
@@ -33,6 +36,7 @@ public class Inventory : MonoBehaviour
 
             if (inventoryActivated)
             {
+                theGunController.CancelFineSight();
                 OpenInvenvtory();
             }
             else
