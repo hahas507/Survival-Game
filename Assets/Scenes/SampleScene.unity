@@ -3693,6 +3693,58 @@ Transform:
   m_Father: {fileID: 1328285714}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1108276427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108276429}
+  - component: {fileID: 1108276428}
+  m_Layer: 0
+  m_Name: Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1108276428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108276427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b776d309f2329b4983b384f4248a77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemEffects:
+  - itemName: Potion Yellow
+    part:
+    - SP
+    - HUNGER
+    - THIRSTY
+    num: f40100006400000064000000
+  theWeaponManager: {fileID: 1328285718}
+  playerStatusController: {fileID: 47419481}
+--- !u!4 &1108276429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108276427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.78, y: 0.5423387, z: 1.92}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1112752411 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2320708370522042316, guid: 83f2a6c1ebfba814aa593ddc22236010,
@@ -15987,6 +16039,75 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1001 &1911710098
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7048482546401268671, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_Name
+      value: potion_yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681712855816177925, guid: 90bae120ee6d5094c9afea0ff3afb10f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90bae120ee6d5094c9afea0ff3afb10f, type: 3}
 --- !u!114 &1913137584 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6280971746866053323, guid: 83f2a6c1ebfba814aa593ddc22236010,
@@ -16868,8 +16989,8 @@ Rigidbody:
   m_GameObject: {fileID: 125826511312396945}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0

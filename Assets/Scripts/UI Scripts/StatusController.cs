@@ -169,7 +169,7 @@ public class StatusController : MonoBehaviour
         }
     }
 
-    private void IncreaseHP(int _count)
+    public void IncreaseHP(int _count)
     {
         if (currentHP + _count < hp)
         {
@@ -181,7 +181,7 @@ public class StatusController : MonoBehaviour
         }
     }
 
-    private void IncreaseDP(int _count)
+    public void IncreaseDP(int _count)
     {
         if (currentDP + _count < dp)
         {
@@ -190,6 +190,30 @@ public class StatusController : MonoBehaviour
         else
         {
             currentDP = dp;
+        }
+    }
+
+    public void IncreaseSP(int _count)
+    {
+        if (currentSP + _count < sp)
+        {
+            currentSP += _count;
+        }
+        else
+        {
+            currentSP = sp;
+        }
+    }
+
+    public void IncreaseSATISFY(int _count)
+    {
+        if (currentSatisfy + _count < satisfy)
+        {
+            currentSatisfy += _count;
+        }
+        else
+        {
+            currentSatisfy = satisfy;
         }
     }
 
@@ -202,7 +226,7 @@ public class StatusController : MonoBehaviour
         }
     }
 
-    private void IncreaseHunger(int _count)
+    public void IncreaseHunger(int _count)
     {
         if (currentHunger + _count < hunger)
         {
@@ -238,7 +262,7 @@ public class StatusController : MonoBehaviour
         }
     }
 
-    private void SpRechargeTime()
+    public void SpRechargeTime()
     {
         if (spUsed)
         {
@@ -253,7 +277,7 @@ public class StatusController : MonoBehaviour
         }
     }
 
-    private void SpRecover()
+    public void SpRecover()
     {
         if (!spUsed && currentSP < sp)
         {
