@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
     private GameObject go_SlotParent;
 
     private GunController theGunController;
+    private SlotTooltip theSlotTooltip;
 
     private Slot[] slots;
 
@@ -21,6 +22,7 @@ public class Inventory : MonoBehaviour
     {
         slots = go_SlotParent.GetComponentsInChildren<Slot>();
         theGunController = FindObjectOfType<GunController>();
+        theSlotTooltip = FindObjectOfType<SlotTooltip>();
     }
 
     private void Update()
@@ -41,6 +43,7 @@ public class Inventory : MonoBehaviour
             }
             else
             {
+                theSlotTooltip.HideTooltip();
                 CloseInventory();
             }
         }

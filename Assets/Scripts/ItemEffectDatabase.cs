@@ -21,6 +21,9 @@ public class ItemEffectDatabase : MonoBehaviour
     [SerializeField]
     private WeaponManager theWeaponManager;
 
+    [SerializeField]
+    private SlotTooltip theSlotTooltip;
+
     //필요한 컴포넌트
     [SerializeField]
     private StatusController playerStatusController;
@@ -77,5 +80,15 @@ public class ItemEffectDatabase : MonoBehaviour
             }
             Debug.Log("itemEffectsDatabase에 일치하는 itemName이 없습니다.");
         }
+    }
+
+    public void ShowTooltip(Item _item, Vector3 _pos)
+    {
+        theSlotTooltip.ShowTooltip(_item, _pos);
+    }
+
+    public void HideTooltip()
+    {
+        theSlotTooltip.HideTooltip();
     }
 }

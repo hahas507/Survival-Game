@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Potion Yellow
   m_EditorClassIdentifier: 
   itemType: 1
+  itemDescription: Test potion that restores SP, HUNGER, THIRSTY.
   itemName: Potion Yellow
   itemImage: {fileID: 21300000, guid: feac95662ff89bd47b9419df65c69141, type: 3}
   itemPrefab: {fileID: 7048482546401268671, guid: 90bae120ee6d5094c9afea0ff3afb10f,
