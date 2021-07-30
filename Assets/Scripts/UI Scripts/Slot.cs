@@ -20,7 +20,7 @@ public class Slot : MonoBehaviour
     {
         Color color = itemImage.color;
         color.a = _alpha;
-        itemImage.sprite = item.itemImage;
+        itemImage.color = color;
     }
 
     public void AddItem(Item _item, int _count = 1)
