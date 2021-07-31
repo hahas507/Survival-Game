@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Animal : MonoBehaviour
 {
@@ -16,9 +17,7 @@ public class Animal : MonoBehaviour
     [SerializeField]
     protected float runSpeed;
 
-    protected float applySpeed;
-
-    protected Vector3 direction;
+    protected Vector3 destination;
 
     protected bool isWalking;
     protected bool isAction;
@@ -34,9 +33,6 @@ public class Animal : MonoBehaviour
     [SerializeField]
     protected float runTime;//뛰기시간
 
-    [SerializeField]
-    private float turnSpeed;
-
     protected float currentTime;
 
     [SerializeField]
@@ -49,6 +45,7 @@ public class Animal : MonoBehaviour
     protected BoxCollider boxCol;
 
     protected AudioSource theAudio;
+    protected NavMeshAgent nav;
 
     [SerializeField]
     protected AudioClip[] sound_normal;
@@ -61,6 +58,7 @@ public class Animal : MonoBehaviour
 
     private void Start()
     {
+        nav = GetComponent<NavMeshAgent>();
         theAudio = GetComponent<AudioSource>();
         currentTime = waitTime;
         isAction = true;
@@ -71,17 +69,7 @@ public class Animal : MonoBehaviour
         if (!isDead)
         {
             Move();
-            Rotation();
             ElapseTime();
-        }
-    }
-
-    protected void Rotation()
-    {
-        if (isWalking || isRunning)
-        {
-            Vector3 _rotation = Vector3.Lerp(transform.eulerAngles, new Vector3(0f, direction.y, 0f), turnSpeed);
-            rig.MoveRotation(Quaternion.Euler(_rotation));
         }
     }
 
@@ -89,7 +77,8 @@ public class Animal : MonoBehaviour
     {
         if (isWalking || isRunning)
         {
-            rig.MovePosition(transform.position + transform.forward * applySpeed * Time.deltaTime);
+            //rig.MovePosition(transform.position + transform.forward * applySpeed * Time.deltaTime);
+            nav.SetDestination(transform.position + destination * 5f);
         }
     }
 
@@ -111,12 +100,14 @@ public class Animal : MonoBehaviour
         isAction = true;
         isRunning = false;
 
-        applySpeed = walkSpeed;
+        nav.speed = walkSpeed;
+
+        nav.ResetPath();
 
         anim.SetBool("Walking", isWalking);
         anim.SetBool("Running", isRunning);
 
-        direction.Set(0f, UnityEngine.Random.Range(0f, 360f), 0f);
+        destination.Set(Random.Range(-0.2f, 0.2f), 0f, Random.Range(0.5f, 1f));
     }
 
     protected void TryWalk()
@@ -124,7 +115,7 @@ public class Animal : MonoBehaviour
         isWalking = true;
         anim.SetBool("Walking", isWalking);
         currentTime = walkTime;
-        applySpeed = walkSpeed;
+        nav.speed = walkSpeed;
         Debug.Log("walk");
     }
 
