@@ -18145,6 +18145,124 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59ca035d05cb1e4dae2376b44cbc743, type: 3}
+--- !u!1001 &5267519421096782425
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 998409916642703665, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_Name
+      value: Pig
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799220809511147481, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c48c75b3cdbbff948b12688de3c43be4, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1a95ba6519b9fd45a6bf8eddd49c01d, type: 3}
+--- !u!1 &5267519421096782426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 998409916642703665, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5267519421096782425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5267519421096782427 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4799220809511147481, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5267519421096782425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5267519421096782428 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1486100591189504184, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5267519421096782425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &5267519421096782429 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4503674422124780630, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5267519421096782425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5267519421096782430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5267519421096782426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148cefc3057fa534da5af9cf30e182ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalName: Pig
+  hp: 2
+  walkSpeed: 2
+  walkTime: 2
+  waitTime: 2
+  anim: {fileID: 5267519421096782427}
+  rig: {fileID: 5267519421096782429}
+  boxCol: {fileID: 5267519421096782428}
 --- !u!4 &5649239529686890240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3398888899875849463, guid: 5dfc78d72306bb24c93dd739c9bb9f05,
