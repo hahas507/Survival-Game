@@ -4087,7 +4087,7 @@ MonoBehaviour:
     - SP
     - HUNGER
     - THIRSTY
-    num: f40100006400000064000000
+    num: 3f420f003f420f003f420f00
   theWeaponManager: {fileID: 1328285718}
   theSlotTooltip: {fileID: 900255221}
   playerStatusController: {fileID: 47419481}
@@ -17525,6 +17525,131 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1001 &284417596816771659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 284417596495591605, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_Name
+      value: Fire_Smog
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597488971019, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 7723039482961636068, guid: bea609ea33531c54387f8cba52b93936,
+        type: 3}
+    - target: {fileID: 284417597488971019, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: LightsModule.ratio
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597488971019, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597488971019, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: LightsModule.maxLights
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597488971019, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: LightsModule.rangeCurve.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597488971019, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: LightsModule.rangeCurve.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597488971019, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597488971019, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: LightsModule.rangeCurve.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597488971019, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.minScalar
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597488971019, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962800, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_Name
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284417597877962807, guid: 356062f8edcddfb479180f4eaa51b91e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 356062f8edcddfb479180f4eaa51b91e, type: 3}
 --- !u!1001 &393339074255859791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18189,7 +18314,7 @@ PrefabInstance:
     - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.49
+      value: 15.8
       objectReference: {fileID: 0}
     - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
         type: 3}
@@ -18199,7 +18324,7 @@ PrefabInstance:
     - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 6.08
       objectReference: {fileID: 0}
     - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
         type: 3}
@@ -18301,7 +18426,6 @@ MonoBehaviour:
   walkTime: 2
   waitTime: 2
   runTime: 2
-  turnSpeed: 0.5
   anim: {fileID: 5267519421096782427}
   rig: {fileID: 5267519421096782429}
   boxCol: {fileID: 5267519421096782428}
