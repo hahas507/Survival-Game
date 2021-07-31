@@ -3138,8 +3138,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7bb1f86b8c410af4499df4d87ed351e0, type: 3}
   - name: Rock_Destroy
     clip: {fileID: 8300000, guid: 6d06bcea25b930b47b455fbfcbf5b00c, type: 3}
-  - name: 
-    clip: {fileID: 0}
+  - name: Animal_Hit
+    clip: {fileID: 8300000, guid: a7ad33c1adfab014da99edcb9d686e63, type: 3}
   - name: 
     clip: {fileID: 0}
   - name: 
@@ -18157,6 +18157,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pig
       objectReference: {fileID: 0}
+    - target: {fileID: 998409916642703665, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
         type: 3}
       propertyPath: m_RootOrder
@@ -18257,12 +18262,125 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalName: Pig
   hp: 2
-  walkSpeed: 2
+  walkSpeed: 1
+  runSpeed: 6
   walkTime: 2
   waitTime: 2
+  runTime: 2
   anim: {fileID: 5267519421096782427}
   rig: {fileID: 5267519421096782429}
   boxCol: {fileID: 5267519421096782428}
+  sound_pig_normal:
+  - {fileID: 8300000, guid: 5f79245c93d92334eb595a13c94a62a6, type: 3}
+  - {fileID: 8300000, guid: 4bfc6dfa932b3684eb5e62a27064237e, type: 3}
+  - {fileID: 8300000, guid: 22a6abe4c533ac8419d86b2be83f513f, type: 3}
+  sound_pig_hurt: {fileID: 8300000, guid: f2085eefe47986946874cda6417fc55e, type: 3}
+  sound_pig_dead: {fileID: 8300000, guid: 30c2d3e351d90de46b3fa7a2ffe32fed, type: 3}
+--- !u!82 &5267519421096782431
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5267519421096782426}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 4
+  MaxDistance: 15
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.26666668
+      value: 1
+      inSlope: -3.7514992
+      outSlope: -3.7514992
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5205465
+      value: 0.43418884
+      inSlope: -1.2765251
+      outSlope: -1.2765251
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.29484248
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.6481018
+      outSlope: -0.6481018
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.57508
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0072936304
+      value: 0.10204538
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &5649239529686890240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3398888899875849463, guid: 5dfc78d72306bb24c93dd739c9bb9f05,
