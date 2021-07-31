@@ -14,6 +14,9 @@ public abstract class MeleeWeaponController : MonoBehaviour
 
     protected RaycastHit hitInfo;
 
+    [SerializeField]
+    protected LayerMask layerMask;
+
     protected void TryAttack()
     {
         if (!Inventory.inventoryActivated)
@@ -51,7 +54,7 @@ public abstract class MeleeWeaponController : MonoBehaviour
 
     protected bool CheckObject()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, currentMeleeWeapon.range))
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, currentMeleeWeapon.range, layerMask))
         {
             return true;
         }

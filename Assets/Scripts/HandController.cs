@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HandController : MeleeWeaponController
 {
-    public static bool isActivate = false;
+    public static bool isActivate = true;
 
     private void Start()
     {

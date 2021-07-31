@@ -4491,7 +4491,7 @@ GameObject:
   - component: {fileID: 1223303052}
   - component: {fileID: 1223303057}
   - component: {fileID: 1223303056}
-  m_Layer: 2
+  m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4567,7 +4567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223303051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 24.5, y: 1, z: 4.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -5087,6 +5087,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMeleeWeapon: {fileID: 8768013043651801420}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1587
 --- !u!114 &1328285716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5102,6 +5105,9 @@ MonoBehaviour:
   currentGun: {fileID: 994766293}
   isFineSightMode: 0
   originPos: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1587
   theCam: {fileID: 963194227}
   HitEffectPrefab: {fileID: 3495356983157993481, guid: 3c390279eab1f2b46a0326180aa81e3f,
     type: 3}
@@ -5257,6 +5263,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMeleeWeapon: {fileID: 4984906200654327227}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1587
 --- !u!114 &1328285721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5270,6 +5279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMeleeWeapon: {fileID: 4861718767938130965}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1587
 --- !u!1 &1336414139
 GameObject:
   m_ObjectHideFlags: 0
@@ -18170,7 +18182,7 @@ PrefabInstance:
     - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.83
+      value: 25.49
       objectReference: {fileID: 0}
     - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
         type: 3}
@@ -18180,7 +18192,7 @@ PrefabInstance:
     - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.31
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1184683528290975432, guid: b1a95ba6519b9fd45a6bf8eddd49c01d,
         type: 3}
@@ -18270,12 +18282,12 @@ MonoBehaviour:
   anim: {fileID: 5267519421096782427}
   rig: {fileID: 5267519421096782429}
   boxCol: {fileID: 5267519421096782428}
-  sound_pig_normal:
+  sound_normal:
   - {fileID: 8300000, guid: 5f79245c93d92334eb595a13c94a62a6, type: 3}
   - {fileID: 8300000, guid: 4bfc6dfa932b3684eb5e62a27064237e, type: 3}
   - {fileID: 8300000, guid: 22a6abe4c533ac8419d86b2be83f513f, type: 3}
-  sound_pig_hurt: {fileID: 8300000, guid: f2085eefe47986946874cda6417fc55e, type: 3}
-  sound_pig_dead: {fileID: 8300000, guid: 30c2d3e351d90de46b3fa7a2ffe32fed, type: 3}
+  sound_hurt: {fileID: 8300000, guid: f2085eefe47986946874cda6417fc55e, type: 3}
+  sound_dead: {fileID: 8300000, guid: 30c2d3e351d90de46b3fa7a2ffe32fed, type: 3}
 --- !u!82 &5267519421096782431
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18381,6 +18393,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5267519421096782433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5267519421096782426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3067b7c111c711f4681ae6e080611ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewAngle: 130
+  viewDistance: 10
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!4 &5649239529686890240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3398888899875849463, guid: 5dfc78d72306bb24c93dd739c9bb9f05,
