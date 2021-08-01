@@ -156,9 +156,9 @@ public class StatusController : MonoBehaviour
 
     public void DecreaseHP(int _count)
     {
-        if (currentDP > 0)
+        if (currentHP > 0)
         {
-            DecreaseDP(_count);
+            currentHP -= _count;
             return;
         }
         currentHP -= _count;
