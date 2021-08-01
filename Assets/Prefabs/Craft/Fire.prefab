@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 284417596495591754}
   - component: {fileID: 284417596495591755}
   m_Layer: 0
-  m_Name: Fire (1)
+  m_Name: Fire_Smog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8515,18 +8515,18 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 0
-    ratio: 0
-    light: {fileID: 0}
+    enabled: 1
+    ratio: 0.5
+    light: {fileID: 7723039482961636068, guid: bea609ea33531c54387f8cba52b93936, type: 3}
     randomDistribution: 1
     color: 1
     range: 1
     intensity: 1
     rangeCurve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
-      minScalar: 1
+      minMaxState: 3
+      scalar: 0.75
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8577,9 +8577,9 @@ ParticleSystem:
         m_RotationOrder: 4
     intensityCurve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
-      minScalar: 1
+      minMaxState: 3
+      scalar: 0.5
+      minScalar: 0.26
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8628,7 +8628,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 20
+    maxLights: 30
   TrailModule:
     enabled: 0
     mode: 0
@@ -9515,6 +9515,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 284417597877962807}
+  - component: {fileID: 7214072037625482861}
+  - component: {fileID: 3883512821149084844}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -9529,7 +9531,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284417597877962800}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.52, y: 0.4, z: 9.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9539,6 +9541,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &7214072037625482861
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284417597877962800}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &3883512821149084844
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284417597877962800}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0398884, y: 1.3425527, z: 2.0031872}
+  m_Center: {x: 0.018351555, y: 0.28138137, z: 0.036702156}
 --- !u!1 &284417598096251284
 GameObject:
   m_ObjectHideFlags: 0
@@ -9548,6 +9579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 284417598096251307}
+  - component: {fileID: 152025872525733971}
   m_Layer: 0
   m_Name: Graphic
   m_TagString: Untagged
@@ -9573,6 +9605,22 @@ Transform:
   m_Father: {fileID: 284417597877962807}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &152025872525733971
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284417598096251284}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &284417596787149591
 PrefabInstance:
   m_ObjectHideFlags: 0
