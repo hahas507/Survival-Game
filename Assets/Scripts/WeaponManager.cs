@@ -156,4 +156,21 @@ public class WeaponManager : MonoBehaviour
                 break;
         }
     }
+
+    public IEnumerator WeaponInCoroutine()
+    {
+        isChangeWeapon = true;
+        currentWeaponAnimation.SetTrigger("Weapon_Out");
+
+        yield return new WaitForSeconds(ChangeWeaponDelayTime);
+
+        currentWeapon.gameObject.SetActive(false);
+    }
+
+    public void WeaponOut()
+    {
+        isChangeWeapon = false;
+
+        currentWeapon.gameObject.SetActive(true);
+    }
 }

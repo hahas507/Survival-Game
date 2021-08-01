@@ -6387,6 +6387,9 @@ MonoBehaviour:
   runSpeed: 20
   walkSpeed: 10
   crouchSpeed: 1
+  swimSpeed: 2
+  swimFast: 7
+  swimUpSpeed: 2
   jumpForce: 7
   crouchPosY: 0
   lookSensitivity: 2

@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public static bool isNight = false;
     public static bool isWater = false;
 
+    private WeaponManager theWeaponManager;
+
+    private bool flag = false;
+
     private void Update()
     {
         if (isOpenInventory)
@@ -24,11 +28,30 @@ public class GameManager : MonoBehaviour
             Cursor.visible = false;
             canPlayerMove = true;
         }
+
+        if (isWater)
+        {
+            if (!flag)
+            {
+                StopAllCoroutines();
+                StartCoroutine(theWeaponManager.WeaponInCoroutine());
+                flag = true;
+            }
+        }
+        else
+        {
+            if (flag)
+            {
+                flag = false;
+                theWeaponManager.WeaponOut();
+            }
+        }
     }
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        theWeaponManager = FindObjectOfType<WeaponManager>();
     }
 }
