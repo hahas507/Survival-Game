@@ -7,8 +7,6 @@ public class DayCycle : MonoBehaviour
     [SerializeField]
     private float secondPerRealTimeSecond;
 
-    private bool isNight = false;
-
     [SerializeField]
     private float fogDensityCalc;//
 
@@ -29,14 +27,14 @@ public class DayCycle : MonoBehaviour
 
         if (transform.eulerAngles.x >= 170)
         {
-            isNight = true;
+            GameManager.isNight = true;
         }
         else if (transform.eulerAngles.x <= 10)
         {
-            isNight = false;
+            GameManager.isNight = false;
         }
 
-        if (isNight)
+        if (GameManager.isNight)
         {
             if (currentFogDensity <= nightFogDensity)
             {
