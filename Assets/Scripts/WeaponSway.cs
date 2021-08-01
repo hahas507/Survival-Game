@@ -31,7 +31,7 @@ public class WeaponSway : MonoBehaviour
 
     private void Update()
     {
-        if (!Inventory.inventoryActivated)
+        if (GameManager.canPlayerMove)
         {
             TrySway();
         }

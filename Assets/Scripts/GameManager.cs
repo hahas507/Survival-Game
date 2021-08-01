@@ -10,13 +10,15 @@ public class GameManager : MonoBehaviour
     public static bool isNight = false;
     public static bool isWater = false;
 
+    public static bool isPause = false;
+
     private WeaponManager theWeaponManager;
 
     private bool flag = false;
 
     private void Update()
     {
-        if (isOpenInventory)
+        if (isOpenInventory || isPause)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
