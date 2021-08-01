@@ -82,7 +82,8 @@ public class CraftManual : MonoBehaviour
 
     private void PreviewPositionUpdate()
     {
-        if (Physics.Raycast(tf_Player.position, tf_Player.forward, out hitInfo, range, layerMask)) ;
+        GameManager.isOpenInventory = false;
+        if (Physics.Raycast(tf_Player.position, tf_Player.forward, out hitInfo, range, layerMask))
         {
             Vector3 _location = hitInfo.point;
             go_Preview.transform.position = _location;
@@ -91,6 +92,7 @@ public class CraftManual : MonoBehaviour
 
     private void Cancel()
     {
+        GameManager.isOpenInventory = false;
         if (isPreviewActivated)
         {
             Destroy(go_Preview);
@@ -107,10 +109,12 @@ public class CraftManual : MonoBehaviour
     {
         if (!isActivated)
         {
+            GameManager.isOpenInventory = true;
             OpenWindow();
         }
         else
         {
+            GameManager.isOpenInventory = false;
             CloseWindow();
         }
     }
