@@ -79,11 +79,14 @@ public class StatusController : MonoBehaviour
 
     private void Update()
     {
-        Hunger();
-        Thristy();
-        GaugeUpdate();
-        SpRechargeTime();
-        SpRecover();
+        if (!GameManager.isPause)
+        {
+            Hunger();
+            Thristy();
+            GaugeUpdate();
+            SpRechargeTime();
+            SpRecover();
+        }
     }
 
     private void GaugeUpdate()

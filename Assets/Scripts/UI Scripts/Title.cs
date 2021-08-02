@@ -7,6 +7,23 @@ public class Title : MonoBehaviour
 {
     public string sceneName = "GameStage";
 
+    public static Title instance;
+
+    private SaveLoad theSaveLoad;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void ClickStart()
     {
         Debug.Log("loading");
@@ -16,6 +33,21 @@ public class Title : MonoBehaviour
     public void ClickLoad()
     {
         Debug.Log("load");
+
+        StartCoroutine(LoadCoroutine());
+    }
+
+    private IEnumerator LoadCoroutine()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+        theSaveLoad = FindObjectOfType<SaveLoad>();
+        theSaveLoad.LoadData();
+        gameObject.SetActive(false);
     }
 
     public void ClickExit()

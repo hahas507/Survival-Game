@@ -8,9 +8,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject go_BaseUI;
 
-    private void Start()
-    {
-    }
+    [SerializeField]
+    private SaveLoad theSaveLoad;
 
     // Update is called once per frame
     private void Update()
@@ -44,14 +43,19 @@ public class PauseMenu : MonoBehaviour
 
     public void ClickSave()
     {
+        Debug.Log("Save button click");
+        theSaveLoad.SaveData();
     }
 
     public void ClickLoad()
     {
+        Debug.Log("load button click");
+        theSaveLoad.LoadData();
     }
 
     public void ClickExit()
     {
+        Debug.Log("exit");
         Application.Quit();
     }
 }
